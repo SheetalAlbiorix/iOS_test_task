@@ -1,10 +1,7 @@
-# ChargebackUI
+# ChargebackUI iOS test task
 
-A modern iOS application built with SwiftUI for managing subscription services and recurring payments.
+A modern iOS application built with SwiftUI.
 
-## 📱 Overview
-
-ChargebackUI is a subscription management app that allows users to create, track, and manage their recurring subscriptions. The app features a clean, intuitive interface with custom form components and service selection capabilities.
 
 ## ✨ Features
 
@@ -55,12 +52,6 @@ ChargebackUI/
 - **Design Pattern**: MVVM-inspired architecture
 - **State Management**: @State, @Binding, @Environment
 
-## 📋 Requirements
-
-- iOS 16.0 or later
-- **Fully compatible with iOS 16 and later**
-- Xcode 16.0 or later
-- macOS 11.0 or later (for development)
 
 ## 🚀 Getting Started
 
