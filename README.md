@@ -83,9 +83,5 @@ No additional dependencies or package managers are required. The project uses on
 - Extract magic numbers to constants
 - Document complex logic
 
-### Git Workflow
-- Create feature branches from main
-- Write descriptive commit messages
-- Keep commits focused and atomic
 
 **Built with ❤️ using SwiftUI**
