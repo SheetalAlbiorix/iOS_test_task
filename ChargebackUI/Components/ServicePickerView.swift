@@ -49,7 +49,7 @@ struct ServicePickerView: View {
                 .padding(12)
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
-                        .stroke(AppColors.background, lineWidth: 2)
+                        .stroke(AppColors.border, lineWidth: 2)
                 )
                 .cornerRadius(10)
                 .padding(.horizontal, 16)
@@ -107,14 +107,14 @@ struct ServicePickerView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .principal) {
-                    Text("Services")
-                        .font(.system(size: 17, weight: .semibold))
+                    Text(AppStrings.service)
+                        .font(.system(size: 18, weight: .medium))
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Done") {
+                    Button(AppStrings.done) {
                         dismiss()
                     }
-                    .font(.system(size: 17, weight: .semibold))
+                    .font(.system(size: 18, weight: .medium))
                     .foregroundColor(AppColors.activeBlue)
                 }
             }

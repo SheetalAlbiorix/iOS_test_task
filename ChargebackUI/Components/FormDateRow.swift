@@ -7,27 +7,6 @@
 
 import SwiftUI
 
-// MARK: - Form Date Row Component
-//struct FormDateRow: View {
-//    let label: String
-//    @Binding var date: Date
-//    
-//    var body: some View {
-//        HStack {
-//            Text(label)
-//                .font(.system(size: 15, weight: .regular))
-//                .foregroundColor(Color.gray)
-//            
-//            Spacer()
-//            
-//            DatePicker("", selection: $date, displayedComponents: .date)
-//                .labelsHidden()
-//                .accentColor(AppColors.activeBlue)
-//        }
-//        .padding(.vertical, 12)
-//    }
-//}
-
 struct FormDateRow: View {
     let label: String
     @Binding var date: Date
@@ -39,14 +18,20 @@ struct FormDateRow: View {
         } label: {
             HStack {
                 Text(label)
-                    .font(.system(size: 15, weight: .regular))
+                    .font(.system(size: 16, weight: .regular))
                     .foregroundColor(.gray)
                 
                 Spacer()
                 
-                Text(date, style: .date)
-                    .font(.system(size: 15, weight: .regular))
-                    .foregroundColor(AppColors.black)
+                HStack {
+                    Text(formattedDate)
+                        .font(.system(size: 16, weight: .regular))
+                        .foregroundColor(AppColors.black)
+                }
+                .padding(.horizontal,16)
+                .padding(.vertical, 12)
+                .background(AppColors.lightGray)
+                .cornerRadius(10)
             }
             .padding(.vertical, 12)
         }
@@ -55,10 +40,18 @@ struct FormDateRow: View {
                 selectedDate: $date,
                 isPresented: $showDatePicker
             )
-            .presentationDetents([.height(300)]) 
+            .presentationDetents([.height(300)])
             .presentationDragIndicator(.visible)
         }
     }
+
+    // MARK: - Custom date formatter
+    var formattedDate: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM d, yyyy" // 👉 e.g. Apr 12, 2021
+        return formatter.string(from: date)
+    }
 }
+
 
 

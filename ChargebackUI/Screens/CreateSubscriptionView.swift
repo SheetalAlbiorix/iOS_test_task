@@ -38,9 +38,16 @@ struct CreateSubscriptionView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button(action: { dismiss() }) {
-                        Image(systemName: "xmark")
-                            .foregroundColor(AppColors.black)
-                            .font(.system(size: 18, weight: .medium))
+                        ZStack {
+                            Circle()
+                                .stroke(AppColors.border, lineWidth: 1)
+                                .fill(AppColors.white)
+                                .frame(width: 44, height: 44)
+                            
+                            Image(systemName: "xmark")
+                                .foregroundColor(AppColors.black)
+                                .font(.system(size: 14, weight: .medium))
+                        }
                     }
                 }
                 
@@ -85,25 +92,25 @@ struct CreateSubscriptionView: View {
                 ZStack {
                     if let icon = service?.icon {
                         Image(icon)
-                            .frame(width: 48, height: 48)
+                            .frame(width: 50, height: 50)
                     } else {
                         Circle()
                             .fill(AppColors.blueTint)
-                            .frame(width: 48, height: 48)
+                            .frame(width: 50, height: 50)
                         
                         Image(systemName: "plus")
-                            .font(.system(size: 20, weight: .semibold))
+                            .font(.system(size: 24, weight: .semibold))
                             .foregroundColor(AppColors.activeBlue)
                     }
                 }
                 
                 VStack(alignment: .leading, spacing: 4) {
                     Text(service?.name ?? AppStrings.chooseService)
-                        .font(.system(size: 16, weight: .regular))
-                        .foregroundColor(AppColors.grayText)
+                        .font(.system(size: 18, weight: .medium))
+                        .foregroundColor(service != nil ? AppColors.textColor:AppColors.inactiveGray)
                     
                     Text(service != nil ? "$\(service!.price)" : AppStrings.defaultAmount)
-                        .font(.system(size: 14, weight: .regular))
+                        .font(.system(size: 16, weight: .regular))
                         .foregroundColor(AppColors.subText)
                 }
                 

@@ -47,15 +47,15 @@ struct FrequencyPickerView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .principal) {
-                    Text("Services")
-                        .font(.system(size: 17, weight: .semibold))
+                    Text(AppStrings.frequency)
+                        .font(.system(size: 18, weight: .medium))
                 }
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Done") {
+                    Button(AppStrings.done) {
                         dismiss()
                     }
-                    .font(.system(size: 17, weight: .semibold))
+                    .font(.system(size: 18, weight: .medium))
                     .foregroundColor(AppColors.activeBlue)
                 }
             }

@@ -15,7 +15,7 @@ struct FormToggleRow: View {
     var body: some View {
         HStack {
             Text(label)
-                .font(.system(size: 15, weight: .regular))
+                .font(.system(size: 16, weight: .regular))
                 .foregroundColor(Color.gray)
             
             Spacer()

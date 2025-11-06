@@ -35,7 +35,7 @@ struct FormRow: View {
                         }
 
                         Text(value)
-                            .font(.system(size: 15, weight: .regular))
+                            .font(.system(size: 16, weight: .regular))
                             .foregroundColor(value == placeholder ? Color.gray.opacity(0.5) : Color.black)
                         
                         Image(systemName: "chevron.up.chevron.down")

@@ -33,15 +33,15 @@ struct DatePickerView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .principal) {
-                    Text("Start Date")
-                        .font(.system(size: 17, weight: .semibold))
+                    Text(AppStrings.startDate)
+                        .font(.system(size: 18, weight: .medium))
                 }
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(AppStrings.save) {
+                    Button(AppStrings.done) {
                         isPresented = false
                     }
-                    .font(.system(size: 17, weight: .semibold))
+                    .font(.system(size: 18, weight: .medium))
                     .foregroundColor(AppColors.activeBlue)
                 }
             }
