@@ -50,15 +50,16 @@ ChargebackUI/
 
 - **Language**: Swift
 - **UI Framework**: SwiftUI
-- **iOS Version**: iOS 15.0+
-- **Xcode Version**: Xcode 13.0+
+- **iOS Version**: iOS 16.0+ 
+- **Xcode Version**: Xcode 16.0+
 - **Design Pattern**: MVVM-inspired architecture
 - **State Management**: @State, @Binding, @Environment
 
 ## 📋 Requirements
 
-- iOS 15.0 or later
-- Xcode 13.0 or later
+- iOS 16.0 or later
+- **Fully compatible with iOS 16 and later**
+- Xcode 16.0 or later
 - macOS 11.0 or later (for development)
 
 ## 🚀 Getting Started
@@ -84,141 +85,6 @@ ChargebackUI/
 
 No additional dependencies or package managers are required. The project uses only native iOS frameworks.
 
-## 💻 Key Components
-
-### Models
-
-#### SubscriptionService
-```swift
-struct SubscriptionService: Identifiable, Equatable {
-    let id: UUID
-    let name: String
-    let price: Double
-    let icon: String
-}
-```
-
-#### SubscriptionCategory
-```swift
-enum SubscriptionCategory: String, CaseIterable {
-    case subscription, utility, cardPayment, loan, rent
-}
-```
-
-#### Frequency
-```swift
-enum Frequency: String, CaseIterable {
-    case weekly, monthly, annually
-}
-```
-
-### Custom Components
-
-- **FormRow**: Reusable form field component with label and value
-- **FormDateRow**: Specialized row for date selection
-- **FormToggleRow**: Toggle switch with label
-- **ServicePickerView**: Full-screen service selection with search
-- **CategoryPickerView**: Bottom sheet for category selection
-- **FrequencyPickerView**: Bottom sheet for frequency selection
-
-### Design System
-
-The app uses a consistent design system defined in `AppConstants.swift`:
-
-**Colors**:
-- Primary: `#002FFF` (Active Blue)
-- Background: `#F4F5F7`
-- Text: `#212121`
-- Inactive: `#98A2B3`
-- Divider: `#E3E6EB`
-
-**Typography**:
-- Titles: System font, semibold, 17-18pt
-- Body: System font, regular, 15-16pt
-- Labels: System font, regular, 15pt
-
-## 🎨 UI Features
-
-### Main Screen
-- Welcome message
-- Navigation button to create subscription
-
-### Create Subscription Screen
-- Service selection card with icon and price display
-- Form fields for:
-  - Service name
-  - Amount
-  - Category (with SF Symbol icons)
-  - Start date
-  - Payment frequency
-  - Active/inactive toggle
-- Custom navigation bar with close and save buttons
-- Bottom sheets for pickers
-- Real-time validation (Save button disabled until service is selected)
-
-### Service Picker
-- Searchable list of services
-- Service icons and names
-- Selected state indicator
-- Case-insensitive search filtering
-
-## 🔧 Customization
-
-### Adding New Services
-
-Edit `ServicePickerView.swift` and add to the services array:
-
-```swift
-SubscriptionService(name: "Service Name", price: 9.99, icon: "IconName")
-```
-
-### Adding New Categories
-
-Edit `SubscriptionCategory.swift`:
-
-```swift
-case newCategory = "New Category"
-
-var icon: String {
-    case .newCategory: return "sf.symbol.name"
-}
-```
-
-### Modifying Colors
-
-Edit `AppConstants.swift` to change the color scheme:
-
-```swift
-static let newColor = Color(hex: "#HEXCODE")
-```
-
-## 📝 Code Highlights
-
-### Hex Color Support
-The app includes a custom `Color` extension that supports hex color initialization:
-
-```swift
-Color(hex: "#002FFF")
-```
-
-### SwiftUI Best Practices
-- Proper use of `@State` and `@Binding` for state management
-- `@Environment(\.dismiss)` for modal dismissal
-- Extracted subviews for better code organization
-- Sheet presentations with custom detents
-- Computed properties for filtered data
-
-## 🧪 Testing
-
-The project structure supports unit testing. To add tests:
-
-1. Create a new test target in Xcode
-2. Add test files for models and view models
-3. Run tests with ⌘U
-
-
-## 👨‍💻 Development
-
 ### Code Style
 - Follow Swift naming conventions
 - Use SwiftUI view builders
@@ -230,6 +96,5 @@ The project structure supports unit testing. To add tests:
 - Create feature branches from main
 - Write descriptive commit messages
 - Keep commits focused and atomic
-
 
 **Built with ❤️ using SwiftUI**
